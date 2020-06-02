@@ -19,6 +19,7 @@ module.exports = (env = {}) =>
       app: './public/app/index.ts',
       dark: './public/sass/grafana.dark.scss',
       light: './public/sass/grafana.light.scss',
+      turuu: './public/sass/grafana.turuu.scss',
     },
 
     // If we enabled watch option via CLI
