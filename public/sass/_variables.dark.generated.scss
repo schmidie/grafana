@@ -15,9 +15,9 @@ $theme-name: dark;
 
 // New Colors
 // -------------------------
-$blue-light: #5794f2;
-$blue-base: #3274d9;
-$blue-shade: #1f60c4;
+$blue-light: #ee588d;
+$blue-base: #eb3373;
+$blue-shade: #e81c63;
 $red-base: #e02f44;
 $red-shade: #c4162a;
 $green-base: #299c46;
@@ -31,7 +31,7 @@ $gray70: #9fa7b3;
 $gray60: #7b8087;
 $gray33: #464c54;
 $gray25: #2c3235;
-$gray15: #202226;
+$gray15: #4e4e4e;
 $gray10: #141619;
 $gray05: #0b0c0e;
 
@@ -61,12 +61,12 @@ $white: #ffffff;
 
 // Accent colors
 // -------------------------
-$blue: #33a2e5;
+$blue: #ed4580;
 $red: $red-base;
 $yellow: #ecbb13;
 $orange: #eb7b18;
 $purple: #9933cc;
-$variable: #33a2e5;
+$variable: #ed4580;
 
 $brand-primary: #eb7b18;
 $brand-success: #299c46;
@@ -96,7 +96,7 @@ $text-color-semi-weak: #9fa7b3;
 $text-color-weak: #7b8087;
 $text-color-faint: #464c54;
 $text-color-emphasis: #f7f8fa;
-$text-blue: #33a2e5;
+$text-blue: #ed4580;
 
 $text-shadow-faint: 1px 1px 4px rgb(45, 45, 45);
 $textShadow: none;
@@ -110,7 +110,7 @@ $brand-gradient-vertical: linear-gradient(#f05a28 30%, #fbca0a 99%);
 $link-color: #d8d9da;
 $link-color-disabled: #8e8e8e;
 $link-hover-color: #ffffff;
-$external-link-color: #33a2e5;
+$external-link-color: #ed4580;
 
 // Typography
 // -------------------------
@@ -123,14 +123,14 @@ $hr-border-color: $dark-9;
 // Panel
 // -------------------------
 $panel-bg: #141619;
-$panel-border: 1px solid #202226;
-$panel-header-hover-bg: #202226;
+$panel-border: 1px solid #4e4e4e;
+$panel-header-hover-bg: #4e4e4e;
 $panel-corner: $panel-bg;
 
 // page header
-$page-header-bg: #202226;
+$page-header-bg: #4e4e4e;
 $page-header-shadow: inset 0px -4px 14px $dark-3;
-$page-header-border-color: #202226;
+$page-header-border-color: #4e4e4e;
 
 $divider-border-color: $gray-1;
 
@@ -143,8 +143,8 @@ $code-tag-bg: $dark-1;
 $code-tag-border: $dark-9;
 
 // cards
-$card-background: #202226;
-$card-background-hover: #25272b;
+$card-background: #4e4e4e;
+$card-background-hover: #535353;
 $card-shadow: none;
 
 // Lists
@@ -152,7 +152,7 @@ $list-item-bg: $card-background;
 $list-item-hover-bg: $card-background-hover;
 $list-item-shadow: $card-shadow;
 
-$empty-list-cta-bg: #202226;
+$empty-list-cta-bg: #4e4e4e;
 
 // Scrollbars
 $scrollbarBackground: #404357;
@@ -207,10 +207,10 @@ $input-bg-disabled: $dark-6;
 $input-color: #c7d0d9;
 $input-border-color: #2c3235;
 $input-box-shadow: none;
-$input-border-focus: #5794f2;
+$input-border-focus: #ee588d;
 $input-box-shadow-focus: $blue-light !default;
 $input-color-placeholder: #464c54;
-$input-label-bg: #202226;
+$input-label-bg: #4e4e4e;
 $input-color-select-arrow: $white;
 
 // Search
@@ -224,7 +224,7 @@ $typeahead-selected-color: $yellow;
 // Dropdowns
 // -------------------------
 $dropdownBackground: $panel-bg;
-$dropdownBorder: #202226;
+$dropdownBorder: #4e4e4e;
 $dropdownDividerTop: transparent;
 $dropdownDividerBottom: #2c3235;
 
@@ -250,7 +250,7 @@ $navbar-button-border: #2f2f32;
 $side-menu-bg: $panel-bg;
 $side-menu-bg-mobile: $panel-bg;
 $side-menu-border: none;
-$side-menu-item-hover-bg: #202226;
+$side-menu-item-hover-bg: #4e4e4e;
 $side-menu-shadow: 0 0 20px black;
 $side-menu-icon-color: #9fa7b3;
 $side-menu-header-color: #c7d0d9;
@@ -258,7 +258,7 @@ $side-menu-header-color: #c7d0d9;
 // Menu dropdowns
 // -------------------------
 $menu-dropdown-bg: #141619;
-$menu-dropdown-hover-bg: #202226;
+$menu-dropdown-hover-bg: #4e4e4e;
 $menu-dropdown-shadow: 5px 5px 20px -5px $black;
 
 // Tabs
@@ -356,7 +356,7 @@ $variable-option-bg: $dropdownLinkBackgroundHover;
 $switch-bg: $input-bg;
 $switch-slider-color: $dark-3;
 $switch-slider-off-bg: $gray-1;
-$switch-slider-on-bg: #5794f2;
+$switch-slider-on-bg: #ee588d;
 $switch-slider-shadow: 0 0 3px black;
 
 //Checkbox
@@ -380,10 +380,10 @@ $panel-editor-tabs-line-color: #e3e3e3;
 $panel-editor-viz-item-bg-hover: darken($blue-base, 46%);
 
 $panel-options-group-border: none;
-$panel-options-group-header-bg: #202226;
+$panel-options-group-header-bg: #4e4e4e;
 
-$panel-grid-placeholder-bg: darken(#1f60c4, 30%);
-$panel-grid-placeholder-shadow: 0 0 4px #3274d9;
+$panel-grid-placeholder-bg: darken(#e81c63, 30%);
+$panel-grid-placeholder-shadow: 0 0 4px #eb3373;
 
 // logs
 $logs-color-unkown: $gray-2;

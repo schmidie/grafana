@@ -11,18 +11,28 @@ export const commonColorsPalette = {
   gray60: '#7b8087',
   gray33: '#464c54',
   gray25: '#2c3235',
-  gray15: '#202226',
+  // gray15: '#202226',
+  gray15: '#4E4E4E',
   gray10: '#141619',
   gray05: '#0b0c0e',
 
+  // // New blues palette used by next-gen form elements
+  // blue95: '#5794f2', // blue95
+  // blue85: '#33a2e5', // blueText
+  // blue80: '#3274d9', // blue80
+  // blue77: '#1f60c4', // blue77
+  //
+  // // New reds palette used by next-gen form elements
+  // red88: '#e02f44',
+
   // New blues palette used by next-gen form elements
-  blue95: '#5794f2', // blue95
-  blue85: '#33a2e5', // blueText
-  blue80: '#3274d9', // blue80
-  blue77: '#1f60c4', // blue77
+  blue95: '#EE588D', // blue95
+  blue85: '#ED4580', // blueText
+  blue80: '#EB3373', // blue80
+  blue77: '#E81C63', // blue77
 
   // New reds palette used by next-gen form elements
-  red88: '#e02f44',
+  red88: '#28AFB0',
 };
 
 const SPACING_BASE = 8;
