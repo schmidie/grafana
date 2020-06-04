@@ -21,7 +21,7 @@ export class ResetPasswordCtrl {
 
     $scope.navModel = {
       main: {
-        icon: 'grafana',
+        icon: '',
         text: 'Reset Password',
         subTitle: 'Reset your Turuu password',
         breadcrumbs: [{ title: 'Login', url: 'login' }],

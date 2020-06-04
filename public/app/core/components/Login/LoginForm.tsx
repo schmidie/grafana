@@ -17,6 +17,7 @@ const forgottenPasswordStyles = css`
   display: inline-block;
   margin-top: 16px;
   float: right;
+  color: #ffffff;
 `;
 
 const wrapperStyles = css`

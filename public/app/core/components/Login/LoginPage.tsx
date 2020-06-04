@@ -92,6 +92,7 @@ export const getLoginStyles = (theme: GrafanaTheme) => {
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #ffffff;
     `,
     submitButton: css`
       justify-content: center;
