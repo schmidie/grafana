@@ -11,8 +11,7 @@ export const commonColorsPalette = {
   gray60: '#7b8087',
   gray33: '#464c54',
   gray25: '#2c3235',
-  // gray15: '#202226',
-  gray15: '#4E4E4E',
+  gray15: '#202226',
   gray10: '#141619',
   gray05: '#0b0c0e',
 

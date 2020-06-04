@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import config from 'app/core/config';
+// import config from 'app/core/config';
 import { Icon, IconName } from '@grafana/ui';
 
 export interface FooterLink {
@@ -33,9 +33,9 @@ export let getFooterLinks = (): FooterLink[] => {
 };
 
 export let getVersionLinks = (): FooterLink[] => {
-  const { buildInfo, licenseInfo } = config;
+  // const { buildInfo, licenseInfo } = config;
   const links: FooterLink[] = [];
-  const stateInfo = licenseInfo.stateInfo ? ` (${licenseInfo.stateInfo})` : '';
+  // const stateInfo = licenseInfo.stateInfo ? ` (${licenseInfo.stateInfo})` : '';
 
   // links.push({ text: `${buildInfo.edition}${stateInfo}`, url: licenseInfo.licenseUrl });
   // links.push({ text: `v${buildInfo.version} (${buildInfo.commit})` });

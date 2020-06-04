@@ -31,7 +31,7 @@ $gray70: #9fa7b3;
 $gray60: #7b8087;
 $gray33: #464c54;
 $gray25: #2c3235;
-$gray15: #4e4e4e;
+$gray15: #202226;
 $gray10: #141619;
 $gray05: #0b0c0e;
 
@@ -123,14 +123,14 @@ $hr-border-color: $dark-9;
 // Panel
 // -------------------------
 $panel-bg: #141619;
-$panel-border: 1px solid #4e4e4e;
-$panel-header-hover-bg: #4e4e4e;
+$panel-border: 1px solid #202226;
+$panel-header-hover-bg: #202226;
 $panel-corner: $panel-bg;
 
 // page header
-$page-header-bg: #4e4e4e;
+$page-header-bg: #202226;
 $page-header-shadow: inset 0px -4px 14px $dark-3;
-$page-header-border-color: #4e4e4e;
+$page-header-border-color: #202226;
 
 $divider-border-color: $gray-1;
 
@@ -143,8 +143,8 @@ $code-tag-bg: $dark-1;
 $code-tag-border: $dark-9;
 
 // cards
-$card-background: #4e4e4e;
-$card-background-hover: #535353;
+$card-background: #202226;
+$card-background-hover: #25272b;
 $card-shadow: none;
 
 // Lists
@@ -152,7 +152,7 @@ $list-item-bg: $card-background;
 $list-item-hover-bg: $card-background-hover;
 $list-item-shadow: $card-shadow;
 
-$empty-list-cta-bg: #4e4e4e;
+$empty-list-cta-bg: #202226;
 
 // Scrollbars
 $scrollbarBackground: #404357;
@@ -210,7 +210,7 @@ $input-box-shadow: none;
 $input-border-focus: #ee588d;
 $input-box-shadow-focus: $blue-light !default;
 $input-color-placeholder: #464c54;
-$input-label-bg: #4e4e4e;
+$input-label-bg: #202226;
 $input-color-select-arrow: $white;
 
 // Search
@@ -224,7 +224,7 @@ $typeahead-selected-color: $yellow;
 // Dropdowns
 // -------------------------
 $dropdownBackground: $panel-bg;
-$dropdownBorder: #4e4e4e;
+$dropdownBorder: #202226;
 $dropdownDividerTop: transparent;
 $dropdownDividerBottom: #2c3235;
 
@@ -250,7 +250,7 @@ $navbar-button-border: #2f2f32;
 $side-menu-bg: $panel-bg;
 $side-menu-bg-mobile: $panel-bg;
 $side-menu-border: none;
-$side-menu-item-hover-bg: #4e4e4e;
+$side-menu-item-hover-bg: #202226;
 $side-menu-shadow: 0 0 20px black;
 $side-menu-icon-color: #9fa7b3;
 $side-menu-header-color: #c7d0d9;
@@ -258,7 +258,7 @@ $side-menu-header-color: #c7d0d9;
 // Menu dropdowns
 // -------------------------
 $menu-dropdown-bg: #141619;
-$menu-dropdown-hover-bg: #4e4e4e;
+$menu-dropdown-hover-bg: #202226;
 $menu-dropdown-shadow: 5px 5px 20px -5px $black;
 
 // Tabs
@@ -380,7 +380,7 @@ $panel-editor-tabs-line-color: #e3e3e3;
 $panel-editor-viz-item-bg-hover: darken($blue-base, 46%);
 
 $panel-options-group-border: none;
-$panel-options-group-header-bg: #4e4e4e;
+$panel-options-group-header-bg: #202226;
 
 $panel-grid-placeholder-bg: darken(#e81c63, 30%);
 $panel-grid-placeholder-shadow: 0 0 4px #eb3373;
