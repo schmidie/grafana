@@ -15,9 +15,9 @@ $theme-name: light;
 
 // New Colors
 // -------------------------
-$blue-light: #ee588d;
-$blue-base: #eb3373;
-$blue-shade: #e81c63;
+$blue-light: #5794f2;
+$blue-base: #3274d9;
+$blue-shade: #1f60c4;
 $red-base: #e02f44;
 $red-shade: #c4162a;
 $green-base: #3eb15b;
@@ -55,12 +55,12 @@ $white: #ffffff;
 
 // Accent colors
 // -------------------------
-$blue: #ed4580;
+$blue: #33a2e5;
 $red: $red-base;
 $yellow: #ff851b;
 $orange: #ff7941;
 $purple: #9954bb;
-$variable: #ed4580;
+$variable: #33a2e5;
 
 $brand-primary: #ff7941;
 $brand-success: #3eb15b;
@@ -90,7 +90,7 @@ $text-color-semi-weak: #464c54;
 $text-color-weak: #7b8087;
 $text-color-faint: #9fa7b3;
 $text-color-emphasis: #202226;
-$text-blue: #ed4580;
+$text-blue: #33a2e5;
 
 $text-shadow-faint: none;
 
@@ -103,7 +103,7 @@ $brand-gradient-vertical: linear-gradient(#f05a28 30%, #fbca0a 99%);
 $link-color: #464c54;
 $link-color-disabled: #7b8087;
 $link-hover-color: #202226;
-$external-link-color: #ed4580;
+$external-link-color: #33a2e5;
 
 // Typography
 // -------------------------
@@ -200,8 +200,8 @@ $input-bg-disabled: $gray-5;
 $input-color: #464c54;
 $input-border-color: #c7d0d9;
 $input-box-shadow: none;
-$input-border-focus: #ee588d;
-$input-box-shadow-focus: #ee588d;
+$input-border-focus: #5794f2;
+$input-box-shadow-focus: #5794f2;
 $input-color-placeholder: #9fa7b3;
 $input-label-bg: #f1f5f9;
 $input-color-select-arrow: #7b8087;
@@ -349,7 +349,7 @@ $variable-option-bg: $dropdownLinkBackgroundHover;
 $switch-bg: $white;
 $switch-slider-color: $gray-7;
 $switch-slider-off-bg: $gray-5;
-$switch-slider-on-bg: #e81c63;
+$switch-slider-on-bg: #1f60c4;
 $switch-slider-shadow: 0 0 3px $dark-2;
 
 //Checkbox
@@ -375,8 +375,8 @@ $panel-editor-viz-item-bg-hover: lighten($blue-base, 45%);
 $panel-options-group-border: none;
 $panel-options-group-header-bg: $gray-5;
 
-$panel-grid-placeholder-bg: lighten(#ee588d, 30%);
-$panel-grid-placeholder-shadow: 0 0 4px #ee588d;
+$panel-grid-placeholder-bg: lighten(#5794f2, 30%);
+$panel-grid-placeholder-shadow: 0 0 4px #5794f2;
 
 // logs
 $logs-color-unkown: $gray-5;
