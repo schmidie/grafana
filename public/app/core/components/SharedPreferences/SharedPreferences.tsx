@@ -23,7 +23,6 @@ const themes = [
   { value: '', label: 'Default' },
   { value: 'dark', label: 'Dark' },
   { value: 'light', label: 'Light' },
-  { value: 'turuu', text: 'Turuu' },
 ];
 
 const grafanaTimeZones = [
