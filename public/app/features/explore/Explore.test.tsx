@@ -1,23 +1,11 @@
 import React from 'react';
-import {
-  DataSourceApi,
-  LoadingState,
-  ExploreMode,
-  toUtc,
-  DataQueryError,
-  DataQueryRequest,
-  CoreApp,
-  MutableDataFrame,
-} from '@grafana/data';
+import { DataSourceApi, LoadingState, toUtc, DataQueryError, DataQueryRequest, CoreApp } from '@grafana/data';
 import { getFirstNonQueryRowSpecificError } from 'app/core/utils/explore';
 import { ExploreId } from 'app/types/explore';
 import { shallow } from 'enzyme';
-import AutoSizer from 'react-virtualized-auto-sizer';
 import { Explore, ExploreProps } from './Explore';
-import { scanStopAction } from './state/actionTypes';
-import { toggleGraph } from './state/actions';
+import { scanStopAction } from './state/query';
 import { SecondaryActions } from './SecondaryActions';
-import { TraceView } from './TraceView/TraceView';
 import { getTheme } from '@grafana/ui';
 
 const dummyProps: ExploreProps = {
@@ -28,11 +16,12 @@ const dummyProps: ExploreProps = {
       logs: true,
     },
     components: {
-      ExploreStartPage: {},
+      QueryEditorHelp: {},
     },
   } as DataSourceApi,
   datasourceMissing: false,
   exploreId: ExploreId.left,
+  loading: false,
   initializeExplore: jest.fn(),
   initialized: true,
   modifyQueries: jest.fn(),
@@ -41,7 +30,6 @@ const dummyProps: ExploreProps = {
     queries: false,
     range: false,
     mode: false,
-    ui: false,
   },
   refreshExplore: jest.fn(),
   scanning: false,
@@ -64,26 +52,16 @@ const dummyProps: ExploreProps = {
       to: 'now',
     },
   },
-  mode: ExploreMode.Metrics,
-  initialUI: {
-    showingTable: false,
-    showingGraph: false,
-    showingLogs: false,
-  },
   isLive: false,
   syncedTimes: false,
   updateTimeRange: jest.fn(),
   graphResult: [],
-  loading: false,
   absoluteRange: {
     from: 0,
     to: 0,
   },
-  showingGraph: false,
-  showingTable: false,
   timeZone: 'UTC',
   onHiddenSeriesChanged: jest.fn(),
-  toggleGraph: toggleGraph,
   queryResponse: {
     state: LoadingState.NotStarted,
     series: [],
@@ -119,6 +97,12 @@ const dummyProps: ExploreProps = {
   originPanelId: 1,
   addQueryRow: jest.fn(),
   theme: getTheme(),
+  showMetrics: true,
+  showLogs: true,
+  showTable: true,
+  showTrace: true,
+  showNodeGraph: true,
+  splitOpen: (() => {}) as any,
 };
 
 const setupErrors = (hasRefId?: boolean) => {
@@ -142,34 +126,6 @@ describe('Explore', () => {
     const wrapper = shallow(<Explore {...dummyProps} />);
     expect(wrapper.find(SecondaryActions)).toHaveLength(1);
     expect(wrapper.find(SecondaryActions).props().addQueryRowButtonHidden).toBe(false);
-  });
-
-  it('does not show add row button if mode is tracing', () => {
-    const wrapper = shallow(<Explore {...{ ...dummyProps, mode: ExploreMode.Tracing }} />);
-    expect(wrapper.find(SecondaryActions).props().addQueryRowButtonHidden).toBe(true);
-  });
-
-  it('renders TraceView if tracing mode', () => {
-    const wrapper = shallow(
-      <Explore
-        {...{
-          ...dummyProps,
-          mode: ExploreMode.Tracing,
-          queryResponse: {
-            ...dummyProps.queryResponse,
-            state: LoadingState.Done,
-            series: [new MutableDataFrame({ fields: [{ name: 'trace', values: [{}] }] })],
-          },
-        }}
-      />
-    );
-    const autoSizer = shallow(
-      wrapper
-        .find(AutoSizer)
-        .props()
-        .children({ width: 100, height: 100 }) as React.ReactElement
-    );
-    expect(autoSizer.find(TraceView).length).toBe(1);
   });
 
   it('should filter out a query-row-specific error when looking for non-query-row-specific errors', async () => {

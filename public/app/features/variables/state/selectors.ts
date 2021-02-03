@@ -1,7 +1,7 @@
 import { StoreState } from '../../../types';
 import { VariableModel } from '../types';
 import { getState } from '../../../store/store';
-import { NEW_VARIABLE_ID } from './types';
+import memoizeOne from 'memoize-one';
 
 export const getVariable = <T extends VariableModel = VariableModel>(
   id: string,
@@ -28,8 +28,20 @@ export const getVariableWithName = (name: string, state: StoreState = getState()
   return getVariable(name, state, false);
 };
 
-export const getVariables = (state: StoreState = getState(), includeNewVariable = false): VariableModel[] => {
-  return getFilteredVariables(variable => (includeNewVariable ? true : variable.id !== NEW_VARIABLE_ID), state);
+export const getVariables = (state: StoreState = getState()): VariableModel[] => {
+  const filter = (variable: VariableModel) => {
+    return variable.type !== 'system';
+  };
+
+  return getFilteredVariables(filter, state);
+};
+
+export const getSubMenuVariables = memoizeOne((variables: Record<string, VariableModel>): VariableModel[] => {
+  return getVariables(getState());
+});
+
+export const getEditorVariables = (state: StoreState): VariableModel[] => {
+  return getVariables(state);
 };
 
 export type GetVariables = typeof getVariables;

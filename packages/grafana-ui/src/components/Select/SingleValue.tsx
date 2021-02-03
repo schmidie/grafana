@@ -1,7 +1,7 @@
 import React from 'react';
 import { css, cx } from 'emotion';
 
-// Ignoring because I couldn't get @types/react-select work wih Torkel's fork
+// Ignoring because I couldn't get @types/react-select work with Torkel's fork
 // @ts-ignore
 import { components } from '@torkelo/react-select';
 import { useDelayedSwitch } from '../../utils/useDelayedSwitch';
@@ -59,14 +59,7 @@ export const SingleValue = (props: Props) => {
 
   return (
     <components.SingleValue {...props}>
-      <div
-        className={cx(
-          styles.singleValue,
-          css`
-            overflow: hidden;
-          `
-        )}
-      >
+      <div className={cx(styles.singleValue)}>
         {data.imgUrl ? (
           <FadeWithImage loading={loading} imgUrl={data.imgUrl} />
         ) : (

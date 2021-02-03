@@ -14,7 +14,7 @@ export const NoDataSourceCallToAction = () => {
       <a
         href="http://docs.grafana.org/administration/provisioning/#datasources?utm_source=explore"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         className="text-link"
       >
         Learn more
@@ -23,7 +23,7 @@ export const NoDataSourceCallToAction = () => {
   );
 
   const ctaElement = (
-    <LinkButton size="lg" href="/datasources/new" icon="database">
+    <LinkButton size="lg" href="datasources/new" icon="database">
       Add data source
     </LinkButton>
   );

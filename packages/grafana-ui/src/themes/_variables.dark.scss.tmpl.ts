@@ -133,8 +133,8 @@ $page-header-border-color: ${theme.colors.pageHeaderBorder};
 $divider-border-color: $gray-1;
 
 // Graphite Target Editor
-$tight-form-func-bg: $dark-9;
-$tight-form-func-highlight-bg: $dark-10;
+$tight-form-func-bg: ${theme.colors.bg2};
+$tight-form-func-highlight-bg: ${styleMixins.hoverColor(theme.colors.bg2, theme)};
 
 $modal-backdrop-bg: ${theme.colors.bg3};
 $code-tag-bg: $dark-1;
@@ -240,9 +240,6 @@ $horizontalComponentOffset: 180px;
 $navbarHeight: 55px;
 $navbarBorder: 1px solid $dark-6;
 
-$navbarButtonBackground: $panel-bg;
-$navbar-button-border: #2f2f32;
-
 // Sidemenu
 // -------------------------
 $side-menu-bg: $panel-bg;
@@ -300,6 +297,9 @@ $popover-help-bg: $tooltipBackground;
 $popover-help-color: $text-color;
 $popover-error-bg: $btn-danger-bg;
 
+$popover-code-bg: $popover-bg;
+$popover-code-boxshadow: $tooltipShadow;
+
 // images
 $checkboxImageUrl: '../img/checkbox.png';
 
@@ -326,14 +326,14 @@ $json-explorer-url-color: #027bff;
 
 // Changelog and diff
 // -------------------------
-$diff-label-bg: $dark-3;
+$diff-label-bg: ${theme.colors.bg3};
 $diff-label-fg: $white;
 
-$diff-group-bg: $dark-9;
+$diff-group-bg: ${theme.colors.bg2};
 $diff-arrow-color: $white;
 
-$diff-json-bg: $dark-9;
-$diff-json-fg: $gray-5;
+$diff-json-bg: ${theme.colors.bg2};
+$diff-json-fg: ${theme.colors.text};
 
 $diff-json-added: $blue-shade;
 $diff-json-deleted: $red-shade;
@@ -384,12 +384,12 @@ $panel-grid-placeholder-bg: darken(${theme.palette.blue77}, 30%);
 $panel-grid-placeholder-shadow: 0 0 4px ${theme.palette.blue80};
 
 // logs
-$logs-color-unkown: $gray-2;
+$logs-color-unknown: $gray-2;
 
 // toggle-group
 $button-toggle-group-btn-active-bg: linear-gradient(90deg, #eb7b18, #d44a3a);
 $button-toggle-group-btn-active-shadow: inset 0 0 4px $black;
-$button-toggle-group-btn-seperator-border: 1px solid $dark-2;
+$button-toggle-group-btn-separator-border: 1px solid $dark-2;
 
 $vertical-resize-handle-bg: $dark-10;
 $vertical-resize-handle-dots: $gray-1;

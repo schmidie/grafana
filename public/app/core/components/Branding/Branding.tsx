@@ -39,9 +39,9 @@ export class Branding {
   static MenuLogo = MenuLogo;
   static LoginBoxBackground = LoginBoxBackground;
   static AppTitle = 'Turuu';
-  static LoginTitle = 'turuu';
+  static LoginTitle = 'Turuu';
   static GetLoginSubTitle = () => {
-    const slogans = ['Your portal to scalable, self-sustaining micro mobility fleets'];
+    const slogans = ['Your portal to fleet- and maintenance-management'];
     const count = slogans.length;
     return slogans[Math.floor(Math.random() * count)];
   };

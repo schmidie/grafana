@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { initDashboard, InitDashboardArgs } from './initDashboard';
-import { DashboardRouteInfo, DashboardInitPhase } from 'app/types';
+import { DashboardInitPhase, DashboardRouteInfo } from 'app/types';
 import { getBackendSrv } from 'app/core/services/backend_srv';
 import { dashboardInitCompleted, dashboardInitFetching, dashboardInitServices } from './reducers';
 import { updateLocation } from '../../../core/actions';
@@ -164,7 +164,7 @@ function describeInitScenario(description: string, scenarioFn: ScenarioFn) {
   });
 }
 
-describeInitScenario('Initializing new dashboard', ctx => {
+describeInitScenario('Initializing new dashboard', (ctx) => {
   ctx.setup(() => {
     ctx.storeState.user.orgId = 12;
     ctx.args.routeInfo = DashboardRouteInfo.New;
@@ -184,8 +184,8 @@ describeInitScenario('Initializing new dashboard', ctx => {
   });
 
   it('Should send action dashboardInitCompleted', () => {
-    expect(ctx.actions[5].type).toBe(dashboardInitCompleted.type);
-    expect(ctx.actions[5].payload.title).toBe('New dashboard');
+    expect(ctx.actions[8].type).toBe(dashboardInitCompleted.type);
+    expect(ctx.actions[8].payload.title).toBe('New dashboard');
   });
 
   it('Should initialize services', () => {
@@ -197,11 +197,10 @@ describeInitScenario('Initializing new dashboard', ctx => {
   });
 });
 
-describeInitScenario('Initializing home dashboard', ctx => {
+describeInitScenario('Initializing home dashboard', (ctx) => {
   ctx.setup(() => {
     ctx.args.routeInfo = DashboardRouteInfo.Home;
     ctx.backendSrv.get.mockResolvedValue({
-      meta: {},
       redirectUri: '/u/123/my-home',
     });
   });
@@ -212,7 +211,18 @@ describeInitScenario('Initializing home dashboard', ctx => {
   });
 });
 
-describeInitScenario('Initializing existing dashboard', ctx => {
+describeInitScenario('Initializing home dashboard cancelled', (ctx) => {
+  ctx.setup(() => {
+    ctx.args.routeInfo = DashboardRouteInfo.Home;
+    ctx.backendSrv.get.mockRejectedValue({ cancelled: true });
+  });
+
+  it('Should abort init process', () => {
+    expect(ctx.actions.length).toBe(1);
+  });
+});
+
+describeInitScenario('Initializing existing dashboard', (ctx) => {
   const mockQueries = [
     {
       context: 'explore',
@@ -247,8 +257,8 @@ describeInitScenario('Initializing existing dashboard', ctx => {
   });
 
   it('Should send action dashboardInitCompleted', () => {
-    expect(ctx.actions[6].type).toBe(dashboardInitCompleted.type);
-    expect(ctx.actions[6].payload.title).toBe('My cool dashboard');
+    expect(ctx.actions[9].type).toBe(dashboardInitCompleted.type);
+    expect(ctx.actions[9].payload.title).toBe('My cool dashboard');
   });
 
   it('Should initialize services', () => {
@@ -264,7 +274,7 @@ describeInitScenario('Initializing existing dashboard', ctx => {
   });
 });
 
-describeInitScenario('Initializing previously canceled dashboard initialization', ctx => {
+describeInitScenario('Initializing previously canceled dashboard initialization', (ctx) => {
   ctx.setup(() => {
     ctx.storeState.dashboard.initPhase = DashboardInitPhase.Fetching;
   });
@@ -278,7 +288,7 @@ describeInitScenario('Initializing previously canceled dashboard initialization'
   });
 
   it('Should not send action dashboardInitCompleted', () => {
-    const dashboardInitCompletedAction = ctx.actions.find(a => {
+    const dashboardInitCompletedAction = ctx.actions.find((a) => {
       return a.type === dashboardInitCompleted.type;
     });
     expect(dashboardInitCompletedAction).toBe(undefined);

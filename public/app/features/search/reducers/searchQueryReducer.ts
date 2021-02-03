@@ -1,4 +1,4 @@
-import { DashboardQuery, SearchAction, SearchLayout } from '../types';
+import { DashboardQuery, RouteParams, SearchAction, SearchLayout } from '../types';
 import {
   ADD_TAG,
   CLEAR_FILTERS,
@@ -22,12 +22,20 @@ export const defaultQuery: DashboardQuery = {
   layout: SearchLayout.Folders,
 };
 
+export const defaultQueryParams: RouteParams = {
+  sort: null,
+  starred: null,
+  query: null,
+  tag: null,
+  layout: null,
+};
+
 export const queryReducer = (state: DashboardQuery, action: SearchAction) => {
   switch (action.type) {
     case QUERY_CHANGE:
       return { ...state, query: action.payload };
     case REMOVE_TAG:
-      return { ...state, tag: state.tag.filter(t => t !== action.payload) };
+      return { ...state, tag: state.tag.filter((t) => t !== action.payload) };
     case SET_TAGS:
       return { ...state, tag: action.payload };
     case ADD_TAG: {
